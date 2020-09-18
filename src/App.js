@@ -1,38 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import './App.css';
+import './scss/style.scss';
 
 function App() {
-	const [quote, setQuote] = useState('Stateful quote!');
-	const [author, setAuthor] = useState('Stateful author!');
+	const [quote, setQuote] = useState('');
+	const [author, setAuthor] = useState('');
+
+	useEffect(() => {
+		fetchQuote();
+	}, []);
 
 	const quoteURL = 'http://quotes.stormconsultancy.co.uk/random.json';
-
-	// 'http://api.forismatic.com/api/1.0/method=getQuote&format=text&lang=en';
-
-	// let data = {};
 
 	const fetchQuote = () => {
 		fetch(quoteURL)
 			.then((response) => response.json())
 			.then((json) => {
 				setQuote(json.quote);
-				setAuthor(json.author);
+				setAuthor('- ' + json.author);
 			});
 	};
 
 	return (
 		<div className='container bg-primary'>
 			<h1 className='text-center'>Random Quote Machine</h1>
-			<div id='quote-box' className='card text-center'>
-				<p id='text'>{quote}</p>
-				<p id='author'>{author}</p>
-				<div className=''>
-					<button id='new-quote' className='btn p' onClick={() => fetchQuote()}>
+			<div id='quote-box' className='card bg-success'>
+				<p id='text' className='lead text-left'>
+					{quote}
+				</p>
+				<p id='author' className='text-right'>
+					{author}
+				</p>
+				<div className='buttons my'>
+					<a href='twitter.com/intent/tweet' id='tweet-quote' className='p'>
+						<i className='fab fa-twitter-square fa-2x'></i>
+					</a>
+					<button id='new-quote' className='btn' onClick={() => fetchQuote()}>
 						New Quote
-					</button>
-					<button id='tweet-quote' className='btn p'>
-						Tweet quote
 					</button>
 				</div>
 			</div>
@@ -47,7 +51,29 @@ function App() {
 						Matthew Wessel
 					</a>
 				</p>
-				<p id='socials'>Socials Go here</p>
+				<p id='socials'>
+					<a
+						href='https://www.linkedin.com/in/matthew-a-wessel'
+						target='_blank'
+						rel='noreferrer noopener'
+					>
+						<i class='fab fa-linkedin fa-2x'></i>
+					</a>
+					<a
+						href='https://github.com/nucmatt'
+						target='_blank'
+						rel='noreferrer noopener'
+					>
+						<i class='fab fa-github fa-2x'></i>
+					</a>
+					<a
+						href='https://www.freecodecamp.org/nucmatt'
+						target='_blank'
+						rel='noreferrer noopener'
+					>
+						<i class='fab fa-free-code-camp fa-2x'></i>
+					</a>
+				</p>
 			</footer>
 		</div>
 	);
