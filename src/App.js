@@ -57,14 +57,14 @@ function App() {
 						target='_blank'
 						rel='noreferrer noopener'
 					>
-						<i class='fab fa-linkedin fa-2x'></i>
+						<i className='fab fa-linkedin fa-2x'></i>
 					</a>
 					<a
 						href='https://github.com/nucmatt'
 						target='_blank'
 						rel='noreferrer noopener'
 					>
-						<i class='fab fa-github fa-2x'></i>
+						<i className='fab fa-github fa-2x'></i>
 					</a>
 					<a
 						href='https://www.freecodecamp.org/nucmatt'
