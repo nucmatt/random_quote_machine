@@ -10,7 +10,7 @@ function App() {
 		fetchQuote();
 	}, []);
 
-	const quoteURL = 'http://quotes.stormconsultancy.co.uk/random.json';
+	const quoteURL = 'https://quotes.stormconsultancy.co.uk/random.json';
 
 	const fetchQuote = () => {
 		fetch(quoteURL)
