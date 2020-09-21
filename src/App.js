@@ -71,7 +71,7 @@ function App() {
 						target='_blank'
 						rel='noreferrer noopener'
 					>
-						<i class='fab fa-free-code-camp fa-2x'></i>
+						<i className='fab fa-free-code-camp fa-2x'></i>
 					</a>
 				</p>
 			</footer>
