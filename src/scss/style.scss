@@ -1,0 +1,103 @@
+@import 'config';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font-stack;
+	font-size: 1rem;
+	line-height: 1.6;
+	background-color: $background-color;
+	color: $text-color;
+}
+
+a {
+	color: $light-text-color;
+	text-decoration: none;
+	transition: opacity 0.2s ease-in;
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	font: inherit;
+}
+
+i {
+	font-size: 2rem;
+}
+
+input {
+	margin: 1.2rem 0;
+
+	[type='text'],
+	[type='email'],
+	[type='password'],
+	[type='date'] {
+		display: block;
+		width: 100%;
+		padding: 0.4rem;
+		font-size: 1.2rem;
+		border: 1px solid $border-color;
+	}
+
+	[type='submit'] {
+		font: inherit;
+	}
+}
+
+select,
+textarea {
+	display: block;
+	width: 100%;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	border: 1px solid $border-color;
+}
+
+table {
+	th,
+	td {
+		padding: 1rem;
+		text-align: left;
+	}
+
+	th {
+		background: $light-color;
+	}
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+
+	a {
+		padding-right: 1rem;
+	}
+}
+
+
+
+@import 'utilities';
+@import 'buttons';
+@import 'text-styles';
+@import 'forms';
+@import 'navbar';
+@import 'animations';
+
+@import 'mediaqueries';

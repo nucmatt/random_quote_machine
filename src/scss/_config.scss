@@ -1,0 +1,26 @@
+$font-stack: Arial, Helvetica, sans-serif;
+
+$primary-color: #003699;
+$dark-color: #333333;
+$light-color: #f4f4f4;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$background-color: #fff;
+$text-color: #333;
+$light-text-color: #fff;
+$form-text-color: #888;
+$border-color: #ccc;
+
+@mixin set-background($color) {
+    background: $color;
+    color: set-text-color($color);
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 70) {
+        @return $text-color;
+    } @else {
+        @return $light-text-color
+    }
+}
+
